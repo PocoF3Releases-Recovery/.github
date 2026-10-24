@@ -50,7 +50,16 @@ python3 .repo/local_manifests/apply-recovery-patches.py --check
 python3 .repo/local_manifests/apply-recovery-patches.py
 ```
 
-Then use the normal ROM build commands. The runner checks every project before
-applying changes, preserves authorship and safely skips an already-applied stack.
+For a release build:
+
+```sh
+. build/envsetup.sh
+lunch lineage_alioth-cp2a-user
+m installclean
+m evolution
+```
+
+For incremental development, omit `m installclean`. The runner checks every project
+before applying changes, preserves authorship and skips an already-applied stack.
 
 [Verification and limits](https://github.com/PocoF3Releases/Agents.md/blob/main/memory/evox-recovery.md) · [Organization logo](assets/recovery-logo.png)
